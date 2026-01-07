@@ -257,8 +257,8 @@ deprecated, ignored and throws a warning.
 =cut
 
 sub new {
-	my ($class, @args) = @_;
-
+	my (proto, @args) = @_;
+	my $class = ref $proto || $proto;
 	my %hash_keys = (phrase => 1, address => 1, user => 1, host => 1, comment => 1, copy => 1);
 	my $is_hash;
 	if ( scalar @args == 2 and defined $args[0] ) {
